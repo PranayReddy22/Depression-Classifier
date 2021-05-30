@@ -1,4 +1,2 @@
 # Depression-Classifier
-Using this project, we can classify if a person is depressed or not by using their respective social media comments.
-
-Twitter comments are used to classify in this project.
+A GUI that classifies if a person is depressed or not by using their respective social media comments such as Tweets. We used sentiment analysis, data mining and various ML algorithms.
