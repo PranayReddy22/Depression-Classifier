@@ -1,65 +1,78 @@
 # 🧠 Depression Detection on Social Media using Text Mining
 
-This project explores how social media content, particularly user-generated text on platforms like Twitter and Facebook, can be analyzed to detect signs of depression. Using natural language processing and supervised machine learning techniques, the system classifies text as **positive**, **neutral**, or **indicative of depressive symptoms**. The goal is to offer an early-warning tool by extracting emotional, temporal, and linguistic cues from social media posts.
+This project analyzes user-generated content from Twitter and Facebook to detect potential signs of depression using text mining and machine learning. It features end-to-end capabilities including data collection (via Twitter), preprocessing, classification, and a simple GUI for live sentiment checks.
+
+The goal is to explore how Natural Language Processing (NLP) and machine learning can be applied to mental health awareness by identifying depressive tendencies based on emotional, temporal, and linguistic patterns in social media posts.
 
 ---
 
 ## 🎯 Objectives
 
-- Identify early signs of depression from social media posts using NLP
-- Evaluate multiple classification models and feature sets
-- Explore emotional, temporal, and linguistic factors in text
-- Build a lightweight, ML-based system for mental health analysis
+- Detect early signs of depression using social media posts
+- Leverage emotional, temporal, and linguistic features for classification
+- Evaluate multiple ML algorithms and feature combinations
+- Build a minimal GUI for real-time sentiment prediction
 
 ---
 
-## 📊 Methodology
+## 🧠 Project Workflow
 
-1. **Data Collection**  
-   - Sample comments and posts from Twitter and Facebook  
-   - Preprocessed using tokenization, normalization, and stop word removal
+1. **Tweet Collection**
+   - Tweets collected using the Twitter API (via `Depression_Twitter.ipynb`)
+   - Stored in `dep_tweet.txt` for further processing
 
-2. **Feature Engineering**  
-   - Emotional processes (e.g., sentiment polarity)
-   - Temporal cues (e.g., posting time references)
-   - Linguistic style (e.g., personal pronouns, negations)
+2. **Text Preprocessing**
+   - Conducted in `Depression_PreProcessing.ipynb`
+   - Steps include: cleaning, tokenization, stop-word removal, normalization
 
-3. **Machine Learning Models**  
-   - Decision Tree  
-   - k-Nearest Neighbor  
-   - Support Vector Machine  
-   - Ensemble techniques
+3. **Feature Engineering**
+   - Features extracted across three domains:
+     - Emotional (sentiment, mood polarity)
+     - Temporal (time-context cues)
+     - Linguistic (style, grammar patterns)
 
-4. **Classification Output**  
-   - Each input post is classified into:  
-     - **Positive** (no depressive indication)  
-     - **Neutral**  
-     - **Negative** (potential depressive symptoms)
+4. **Classification**
+   - Models: Decision Tree, k-Nearest Neighbor, SVM, Ensemble methods
+   - Implemented in `Depression_SentimentAnalysis.ipynb`
+   - Output labels: `Positive`, `Neutral`, `Negative` (depressive)
 
----
+5. **Evaluation**
+   - Model performance checked in `Depression_AccuracyCheck.ipynb`
+   - Final outputs saved in `dep_output.xlsx`
 
-## 🧠 Tools & Technologies
-
-- **Language**: Python  
-- **Libraries**: scikit-learn, NLTK, Word2Vec  
-- **Techniques**: Text mining, Sentiment analysis, Supervised ML  
+6. **Interactive Interface**
+   - Simple web GUI built with HTML + jQuery (`home.html`)
+   - Backend connected via `mains.py`
 
 ---
 
-## 📈 Results
+## 📊 Sample Output
 
-- The system successfully classifies random test comments with reasonably accurate labels.
-- Screenshots in the presentation show sample inputs and predicted sentiment output.
-- Results indicate that combining emotional, temporal, and linguistic features improves model performance over single-feature models.
+Each social media post is classified into:
+- **Positive** – No depressive indication
+- **Neutral**
+- **Negative** – Potential signs of depression
+
+Outputs are shown live on the GUI or stored in `.xlsx` format for analysis.
 
 ---
 
-## 🚀 Future Scope
+## 🧰 Tools & Technologies
 
-- Integrate advanced NLP techniques such as contextual embeddings (e.g., BERT)
-- Use stop-word optimization and POS tagging for more nuanced feature extraction
-- Expand data to include multimedia (images, video captions)
-- Apply the system across multiple languages and platforms
+- **Language**: Python
+- **Libraries**: scikit-learn, NLTK, Word2Vec, pandas, numpy
+- **Web Interface**: HTML, jQuery, Python backend
+- **Data**: Tweets and Facebook posts
+- **ML Models**: Decision Tree, KNN, SVM, Ensemble
+
+---
+
+## 🚀 Future Enhancements
+
+- Integrate contextual models like BERT or RoBERTa
+- Incorporate image/video metadata for richer sentiment context
+- Expand GUI with backend API support (e.g., Flask or FastAPI)
+- Add POS tagging and n-gram features for improved accuracy
 
 ---
 
